@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StijlSpins - Bestelformulier</title>
+    <link rel="stylesheet" href="../CSS/bestel.css" />
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <h1>StijlSpins</h1>
+        <ul>
+            <li><a href="index.html">Overzicht</a></li>
+            <li><a href="../detailpaginas/detailpagina.html">Details</a></li>
+            <li><a href="winkelmand.html">Winkelmand</a></li>
+        </ul>
+    </nav>
+
+    <!-- Formulier voor Bestellen -->
+    <div id="bestel-formulier">
+        <h2>Bestelformulier</h2>
+        <form action="#" method="post" id="orderForm">
+            <label for="naam">Naam:</label>
+            <input type="text" id="naam" name="naam" required />
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="product">Productnaam:</label>
+            <input type="text" id="product" name="product" required />
+
+            <label for="adres">Adres:</label>
+            <textarea id="adres" name="adres" rows="4" required></textarea>
+
+            <button type="submit">Bestellen</button>
+        </form>
+    </div>
+
+</body>
+</html>

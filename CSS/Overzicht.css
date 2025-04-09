@@ -1,0 +1,170 @@
+body {
+    background-color: #8FBE00;
+    margin: 0;
+    font-family: 'Jockey One', sans-serif;
+}
+
+/* Nav styling */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Schaduw effect voor visueel effect */
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/* Animatie voor nav item hover */
+nav li {
+    padding: 1rem;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect voor nav items */
+nav li:hover {
+    color: #6E9300;
+    transform: scale(1.1); /* Vergroot het item bij hover */
+}
+
+/* Toevoegen van een lijn onder de nav item bij hover */
+nav li::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #6E9300;
+    transition: width 0.3s ease;
+}
+
+nav li:hover::after {
+    width: 100%; /* Laat de lijn onder het item verschijnen bij hover */
+}
+
+/* HERO SECTION */
+#hero {
+    display: flex;
+    width: 20%;
+    height: 500px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Afbeeldingen sectie */
+.image-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 50px;
+}
+
+#fotos,
+#korte-broek {
+    display: flex;
+    gap: 10px;
+}
+
+#fotos img,
+#korte-broek img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+/* Vergroten van afbeeldingen bij hover */
+#fotos img:hover,
+#korte-broek img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsieve styling voor tablets en mobiele apparaten */
+@media (max-width: 1024px) {
+    nav ul {
+        gap: 20px;
+    }
+
+    #hero {
+        height: 400px;
+    }
+
+    .image-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #fotos, #korte-broek {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    #fotos img, #korte-broek img {
+        width: 45%;
+        max-width: 200px;
+    }
+}
+
+/* Mobiele weergave */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav h1 {
+        font-size: 1.8rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav li {
+        padding: 1rem 0;
+    }
+
+    #hero {
+        height: 300px;
+    }
+
+    #fotos img, #korte-broek img {
+        width: 100%;
+        max-width: 150px;
+    }
+}
+
+/* Kleine mobiele schermen */
+@media (max-width: 480px) {
+    nav ul {
+        width: 100%;
+    }
+
+    nav li {
+        padding: 1rem 0;
+    }
+
+    #fotos img, #korte-broek img {
+        width: 80%;
+        max-width: 130px;
+    }
+}
