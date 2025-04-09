@@ -1,65 +1,241 @@
 body {
-    background-color: #8FBE00;
     margin: 0;
     font-family: 'Jockey One', sans-serif;
-}
-
+    background-color: #88be00;
+  }
+  
 /* Navbar */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1rem;
     background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    position: sticky;
-    top: 0;
-    z-index: 10;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-nav li {
-    padding: 1rem;
-    cursor: pointer;
-    position: relative;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-nav li:hover {
+    padding: 15px 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Jockey One', sans-serif;
+  }
+  
+  nav .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
     color: #6E9300;
-    transform: scale(1.1); 
-}
-
-nav li::after {
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav li {
+    position: relative;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: #6E9300;
+  }
+  
+  nav li::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -5px;
     left: 0;
     width: 0;
-    height: 3px;
+    height: 2px;
     background-color: #6E9300;
     transition: width 0.3s ease;
-}
-
-nav li:hover::after {
-    width: 100%; 
-}
-
-nav a {
-    text-decoration: none;
-    color: inherit;
-}
-
-#container{
+  }
+  
+  nav li:hover::after {
+    width: 100%;
+  }
+  
+  
+  .main-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+  }
+  
+  .product-list {
+    flex: 1;
+  }
+  
+  .product {
+    font-size: 24px;
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+  }
+  
+  .close {
+    cursor: default;
+    font-size: 24px;
+  }
+  
+  .counter-section {
+    background-color: #6e9700;
+    padding: 40px;
+    text-align: center;
+    width: 200px;
+    margin-right: 800px;
+  }
+  
+  .counter {
+    background-color: #88be00;
+    margin-bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #6E9300;
+    height: 50px;
+    font-size: 24px;
+    color: white;
+  }
+  
+  .arrow-up,
+  .arrow-down {
+    width: 30px;
+    cursor: default;
+    color: white;
+  }
+  
+  .count {
+    margin: 0 20px;
+    color: black;
+  }
+  
+  .pay-button {
+    background-color: #88be00;
+    padding: 10px 20px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+  }
+  /* Responsieve styling voor tablets en mobiele apparaten */
+@media (max-width: 1024px) {
+    nav ul {
+        gap: 20px;
+    }
+
+    #hero {
+        height: 400px;
+    }
+
+    .image-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #fotos, #korte-broek {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    #fotos img, #korte-broek img {
+        width: 45%;
+        max-width: 200px;
+    }
+}
+
+/* Mobiele weergave */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav h1 {
+        font-size: 1.8rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav li {
+        padding: 1rem 0;
+    }
+
+    #hero {
+        height: 300px;
+    }
+
+    #fotos img, #korte-broek img {
+        width: 100%;
+        max-width: 150px;
+    }
+}
+
+/* Kleine mobiele schermen */
+@media (max-width: 480px) {
+    nav ul {
+        width: 100%;
+    }
+
+    nav li {
+        padding: 1rem 0;
+    }
+
+    #fotos img, #korte-broek img {
+        width: 80%;
+        max-width: 130px;
+    }
+}
+/* Responsieve winkelmand layout */
+@media (max-width: 768px) {
+    .main-content {
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+  
+    .product-list, .counter-section {
+      width: 100%;
+      max-width: 400px;
+    }
+  
+    .product {
+      width: 100%;
+      justify-content: space-between;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+  
+    .counter-section {
+      margin-top: 20px;
+    }
+  
+    .counter {
+      flex-direction: column;
+      height: auto;
+      gap: 10px;
+      padding: 20px 0;
+    }
+  
+    .count {
+      margin: 10px 0;
+    }
+  }
+  footer {
+    background-color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    color: #333;
+    border-top: 1px solid #ccc;
+    margin-top: 40px;
 }

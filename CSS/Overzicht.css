@@ -4,50 +4,63 @@ body {
     font-family: 'Jockey One', sans-serif;
 }
 
-/* Nav styling */
+/* Navbar */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1rem;
     background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Schaduw effect voor visueel effect */
-    position: sticky;
-    top: 0;
-    z-index: 10;
-}
-
-/* Animatie voor nav item hover */
-nav li {
-    padding: 1rem;
-    cursor: pointer;
-    position: relative;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-/* Hover effect voor nav items */
-nav li:hover {
+    padding: 15px 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Jockey One', sans-serif;
+  }
+  
+  nav .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
     color: #6E9300;
-    transform: scale(1.1); /* Vergroot het item bij hover */
-}
-
-/* Toevoegen van een lijn onder de nav item bij hover */
-nav li::after {
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav li {
+    position: relative;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: #6E9300;
+  }
+  
+  nav li::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -5px;
     left: 0;
     width: 0;
-    height: 3px;
+    height: 2px;
     background-color: #6E9300;
     transition: width 0.3s ease;
-}
+  }
+  
+  nav li:hover::after {
+    width: 100%;
+  }
+  
 
-nav li:hover::after {
-    width: 100%; /* Laat de lijn onder het item verschijnen bij hover */
-}
-
-/* HERO SECTION */
+/* HERO */
 #hero {
     display: flex;
     width: 20%;
@@ -167,4 +180,48 @@ nav li:hover::after {
         width: 80%;
         max-width: 130px;
     }
+}
+/* Responsieve winkelmand layout */
+@media (max-width: 768px) {
+    .main-content {
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+  
+    .product-list, .counter-section {
+      width: 100%;
+      max-width: 400px;
+    }
+  
+    .product {
+      width: 100%;
+      justify-content: space-between;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+  
+    .counter-section {
+      margin-top: 20px;
+    }
+  
+    .counter {
+      flex-direction: column;
+      height: auto;
+      gap: 10px;
+      padding: 20px 0;
+    }
+  
+    .count {
+      margin: 10px 0;
+    }
+  }
+  footer {
+    background-color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    color: #333;
+    border-top: 1px solid #ccc;
+    margin-top: 40px;
 }
